@@ -14,6 +14,7 @@ font_data = ExtResource( 2 )
 [node name="GameOver" type="Control"]
 anchor_right = 1.0
 anchor_bottom = 1.0
+rect_pivot_offset = Vector2( -48, 216 )
 
 [node name="ColorRect" type="ColorRect" parent="."]
 margin_right = 1024.0
