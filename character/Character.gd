@@ -69,7 +69,7 @@ func move_and_fall(speed_modifier):
 	velocity.y = velocity.y + GRAVITY
 
 func _on_fallzone_body_entered(body):
-	get_tree().change_scene("res://GameOver.tscn")
+	get_tree().change_scene("res://menus/GameOver.tscn")
 
 func bounce():
 	velocity.y = JUMP_FORCE * 0.5
@@ -89,4 +89,4 @@ func get_hit(enemy_position):
 	$DeathTimer.start()
 
 func _on_DeathTimer_timeout():
-	get_tree().change_scene("res://GameOver.tscn")
+	get_tree().change_scene("res://menus/GameOver.tscn")
