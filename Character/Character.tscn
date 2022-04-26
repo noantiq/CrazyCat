@@ -1,11 +1,13 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://Character/Character-sprites.tres" type="SpriteFrames" id=1]
 [ext_resource path="res://Character/Character.gd" type="Script" id=2]
 
-[sub_resource type="CapsuleShape2D" id=1]
-radius = 25.0
-height = 18.0
+[sub_resource type="RectangleShape2D" id=3]
+extents = Vector2( 24.25, 22.75 )
+
+[sub_resource type="RectangleShape2D" id=4]
+extents = Vector2( 44, 21.5 )
 
 [sub_resource type="TileSet" id=2]
 0/name = "cat.png 0"
@@ -191,12 +193,13 @@ height = 18.0
 13/shapes = [  ]
 13/z_index = 0
 
+[sub_resource type="RectangleShape2D" id=5]
+extents = Vector2( 26.5, 12 )
+
 [node name="Character" type="KinematicBody2D"]
+position = Vector2( 0, -2 )
 collision_mask = 30
 script = ExtResource( 2 )
-__meta__ = {
-"_edit_group_": true
-}
 
 [node name="Sprite" type="AnimatedSprite" parent="."]
 scale = Vector2( 4, 4 )
@@ -204,9 +207,13 @@ frames = ExtResource( 1 )
 animation = "idle"
 playing = true
 
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="."]
+position = Vector2( 24.25, -13.25 )
+shape = SubResource( 3 )
+
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2( 0, 14 )
-shape = SubResource( 1 )
+position = Vector2( 4, 19.5 )
+shape = SubResource( 4 )
 
 [node name="DeathTimer" type="Timer" parent="."]
 wait_time = 0.3
@@ -218,5 +225,9 @@ pitch_scale = 1.2
 [node name="TileMap" type="TileMap" parent="."]
 tile_set = SubResource( 2 )
 format = 1
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="."]
+position = Vector2( -20.5, 0 )
+shape = SubResource( 5 )
 
 [connection signal="timeout" from="DeathTimer" to="." method="_on_DeathTimer_timeout"]
