@@ -11,7 +11,7 @@ config_version=4
 [application]
 
 config/name="Crazy Cat"
-run/main_scene="res://TitleMenu.tscn"
+run/main_scene="res://menus/TitleMenu/TitleMenu.tscn"
 config/icon="res://icon.png"
 
 [input]
