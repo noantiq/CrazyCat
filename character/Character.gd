@@ -90,3 +90,6 @@ func get_hit(enemy_position):
 
 func _on_DeathTimer_timeout():
 	get_tree().change_scene("res://menus/GameOver.tscn")
+	
+func caught():
+	$DeathTimer.start()

@@ -11,3 +11,7 @@ func _on_coin_collected():
 	_ready()
 	if coins == coins_win:
 		get_tree().change_scene("res://menus/Win.tscn")
+
+
+func _on_Hands_hands_caught_player():
+	pass # Replace with function body.
