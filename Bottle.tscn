@@ -89,7 +89,6 @@ script = ExtResource( 2 )
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2( 48.0731, 58.3545 )
 rotation = 0.00753495
-scale = Vector2( 1, 1 )
 shape = SubResource( 5 )
 
 [node name="CollectSound" type="AudioStreamPlayer" parent="."]
@@ -107,4 +106,5 @@ format = 1
 tile_data = PoolIntArray( 0, 2, 0 )
 
 [connection signal="body_entered" from="." to="." method="_on_item_body_entered"]
+[connection signal="body_exited" from="." to="." method="_on_item_body_exited"]
 [connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_AnimationPlayer_animation_finished"]
