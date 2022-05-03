@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=2]
+[gd_scene load_steps=13 format=2]
 
 [ext_resource path="res://world/World_Tiles.tres" type="TileSet" id=1]
 [ext_resource path="res://character/Character.tscn" type="PackedScene" id=2]
@@ -7,7 +7,6 @@
 [ext_resource path="res://assets/background/set2_tiles.png" type="Texture" id=5]
 [ext_resource path="res://coin/Coin.tscn" type="PackedScene" id=6]
 [ext_resource path="res://hud/HUD.tscn" type="PackedScene" id=7]
-[ext_resource path="res://assets/music/Retro Beat.ogg" type="AudioStream" id=8]
 [ext_resource path="res://menus/PauseMenu/PauseMenu.tscn" type="PackedScene" id=9]
 [ext_resource path="res://enemy/enemy.tscn" type="PackedScene" id=10]
 
@@ -145,11 +144,6 @@ editor_draw_limits = true
 editor_draw_drag_margin = true
 
 [node name="PauseMenu" parent="Character/Camera2D" instance=ExtResource( 9 )]
-
-[node name="LevelMusic" type="AudioStreamPlayer" parent="."]
-stream = ExtResource( 8 )
-volume_db = -12.0
-autoplay = true
 
 [connection signal="body_entered" from="Fall Zone" to="Character" method="_on_fallzone_body_entered"]
 [connection signal="coin_collected" from="Coins/Coin2" to="HUD" method="_on_coin_collected"]

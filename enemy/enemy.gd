@@ -10,15 +10,15 @@ export var can_detect_cliffs = true
 func _ready():
 	set_direction()
 	$floor_detection.enabled = can_detect_cliffs
-	if can_detect_cliffs:
-		set_modulate(Color(1.2, 0.5, 1))
+	#if can_detect_cliffs:
+		#set_modulate(Color(1.2, 0.5, 1))
 
 func set_direction():
 	$floor_detection.position.x = $CollisionShape2D.shape.get_extents().x * direction
 	if direction == DIRECTION.RIGHT:
-		$Sprite.flip_h = true
-	else:
 		$Sprite.flip_h = false
+	else:
+		$Sprite.flip_h = true
 
 func _physics_process(delta):
 	if is_on_wall() or can_detect_cliffs and not $floor_detection.is_colliding() and is_on_floor():

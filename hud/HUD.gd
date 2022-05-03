@@ -15,3 +15,8 @@ func _on_coin_collected():
 
 func _on_Hands_hands_caught_player():
 	pass # Replace with function body.
+
+
+func _on_item_thrown_off():
+	coins += 1
+	_ready()

@@ -1,7 +1,24 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://menus/PauseMenu/pause.gd" type="Script" id=1]
-[ext_resource path="res://icon.png" type="Texture" id=2]
+[ext_resource path="res://assets/fonts/KiriFont.ttf" type="DynamicFontData" id=2]
+[ext_resource path="res://assets/music/Swinging Pants.ogg" type="AudioStream" id=3]
+[ext_resource path="res://menus/PauseMenu/continueButton.gd" type="Script" id=4]
+[ext_resource path="res://menus/LevelMenu/navigationbutton.gd" type="Script" id=5]
+
+[sub_resource type="DynamicFont" id=1]
+size = 50
+outline_size = 3
+outline_color = Color( 0.635294, 0.635294, 0.635294, 1 )
+font_data = ExtResource( 2 )
+
+[sub_resource type="DynamicFont" id=2]
+size = 40
+font_data = ExtResource( 2 )
+
+[sub_resource type="DynamicFont" id=3]
+size = 30
+font_data = ExtResource( 2 )
 
 [node name="PauseMenu" type="CanvasLayer"]
 pause_mode = 2
@@ -11,7 +28,71 @@ script = ExtResource( 1 )
 margin_right = 40.0
 margin_bottom = 40.0
 
-[node name="Sprite" type="Sprite" parent="Popup"]
-position = Vector2( 525, 291 )
-scale = Vector2( 12.2969, 7.14062 )
-texture = ExtResource( 2 )
+[node name="ColorRect" type="ColorRect" parent="Popup"]
+margin_left = 106.0
+margin_top = 62.0
+margin_right = 918.0
+margin_bottom = 538.0
+color = Color( 0.129412, 0.235294, 0.227451, 0.666667 )
+
+[node name="Label" type="Label" parent="Popup"]
+margin_top = 174.0
+margin_right = 1024.0
+margin_bottom = 259.0
+custom_colors/font_color = Color( 0.380392, 0.419608, 0.811765, 1 )
+custom_fonts/font = SubResource( 1 )
+text = "Crazy Cat!"
+align = 1
+uppercase = true
+
+[node name="continueButton2" type="Button" parent="Popup"]
+margin_left = 103.0
+margin_top = 371.0
+margin_right = 916.0
+margin_bottom = 444.0
+custom_colors/font_color_hover = Color( 0.596078, 0.0313726, 0.427451, 1 )
+custom_colors/font_color_pressed = Color( 1, 0, 0, 1 )
+custom_fonts/font = SubResource( 2 )
+text = "Continue!"
+flat = true
+script = ExtResource( 5 )
+destination = "world/Level1"
+
+[node name="continueButton" type="Button" parent="Popup"]
+margin_left = 106.0
+margin_top = 303.0
+margin_right = 919.0
+margin_bottom = 376.0
+custom_colors/font_color_hover = Color( 0.596078, 0.0313726, 0.427451, 1 )
+custom_colors/font_color_pressed = Color( 1, 0, 0, 1 )
+custom_fonts/font = SubResource( 2 )
+text = "Continue!"
+flat = true
+script = ExtResource( 4 )
+
+[node name="Button" type="Button" parent="Popup"]
+margin_left = 263.0
+margin_top = 317.0
+margin_right = 300.0
+margin_bottom = 337.0
+text = "test"
+script = ExtResource( 5 )
+destination = "Level2"
+
+[node name="MainMenuButton" type="Button" parent="Popup"]
+margin_left = 107.0
+margin_top = 436.0
+margin_right = 919.0
+margin_bottom = 483.0
+custom_fonts/font = SubResource( 3 )
+text = "Back to Title Menu"
+flat = true
+script = ExtResource( 5 )
+destination = "menus/TitleMenu/TitleMenu"
+
+[node name="TitleScreenMusic" type="AudioStreamPlayer" parent="Popup"]
+stream = ExtResource( 3 )
+volume_db = -15.0
+
+[connection signal="popup_hide" from="Popup" to="." method="_on_Popup_popup_hide"]
+[connection signal="continue_button_pressed" from="Popup/continueButton" to="." method="_on_continueButton_continue_button_pressed"]
