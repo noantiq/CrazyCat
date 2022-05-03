@@ -37,20 +37,20 @@ margin_bottom = 81.0
 texture = ExtResource( 2 )
 
 [node name="x" type="Label" parent="."]
-margin_left = 105.0
-margin_top = 21.0
-margin_right = 135.0
-margin_bottom = 81.0
+margin_left = 106.0
+margin_top = 22.0
+margin_right = 136.0
+margin_bottom = 82.0
 custom_colors/font_color = Color( 0.909804, 0.733333, 0.133333, 1 )
 custom_fonts/font = SubResource( 5 )
 text = "x"
 valign = 1
 
 [node name="Coins" type="Label" parent="."]
-margin_left = 129.0
-margin_top = 13.0
-margin_right = 219.0
-margin_bottom = 97.0
+margin_left = 130.0
+margin_top = 15.0
+margin_right = 220.0
+margin_bottom = 99.0
 custom_colors/font_color = Color( 0.909804, 0.733333, 0.133333, 1 )
 custom_fonts/font = SubResource( 6 )
 text = "##"

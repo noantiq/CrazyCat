@@ -201,6 +201,6 @@ destination = "menus/TitleMenu/TitleMenu"
 [node name="TextureRect" type="AnimatedSprite" parent="Go Back"]
 position = Vector2( -8, 35 )
 frames = SubResource( 27 )
-frame = 13
+frame = 2
 playing = true
 flip_h = true
